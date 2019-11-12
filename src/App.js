@@ -10,6 +10,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 class App extends React.Component {
@@ -23,11 +24,8 @@ class App extends React.Component {
                     <Header />
                     <Sidebar state={this.props.state.sidebar} />
                     <div className='content' >
-                        <Route path='/profile' render={ () => <Profile
-                            profilePage={this.props.state.profilePage}
-                            dispatch={this.props.dispatch} />}
-                        />
-                        <Route path='/dialogs' render={ () => <Dialogs store={this.props.store} />} />
+                        <Route path='/profile' render={ () => <Profile store={this.props.store} />} />
+                        <Route path='/dialogs' render={ () => <DialogsContainer store={this.props.store} />} />
                         <Route path='/news' render={ () => <News />} />
                         <Route path='/music' render={ () => <Music />} />
                         <Route path='/settings' render={ () => <Settings />} />
