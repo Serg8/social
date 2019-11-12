@@ -1,0 +1,18 @@
+.item {
+  color: gray;
+  text-decoration: none;
+}
+
+.item.active2 {
+
+}
+
+.item.active {
+  color: gold;
+}
+
+.nav {
+  grid-area: b;
+  padding: 2%;
+  background-color: lightskyblue;
+}
