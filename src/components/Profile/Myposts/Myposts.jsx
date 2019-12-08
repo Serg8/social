@@ -9,7 +9,7 @@ class Myposts extends Component {
 
     render() {
 
-        let postsElements = this.props.postsData.map(post => <Post message={post.msg} like={post.likesCount} />);
+        let postsElements = this.props.postsData.map(post => <Post message={post.msg} key={post.id} like={post.likesCount} />);
 
         let newPostElement = React.createRef();
 

@@ -5,8 +5,12 @@ class Friends extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
-        let friends = this.props.state.map(friend => <div className={s.friend}>{friend.name}</div>);
+
+        let state = this.props.sidebar;
+
+        let friends = state.friendsData.map(friend => <div className={s.friend} key={friend.id}>{friend.name}</div>);
         return (
             <div>
                 <h3>Friends</h3>

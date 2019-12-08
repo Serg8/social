@@ -11,21 +11,20 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
                 <div className="App">
                     <Header />
-                    <Sidebar state={this.props.state.sidebar} />
+                    <Sidebar />
                     <div className='content' >
-                        <Route path='/profile' render={ () => <Profile store={this.props.store} />} />
-                        <Route path='/dialogs' render={ () => <DialogsContainer store={this.props.store} />} />
+                        <Route path='/profile' render={ () => <Profile/>} />
+                        <Route path='/dialogs' render={ () => <DialogsContainer />} />
+                        <Route path='/users' render={ () => <UsersContainer />} />
                         <Route path='/news' render={ () => <News />} />
                         <Route path='/music' render={ () => <Music />} />
                         <Route path='/settings' render={ () => <Settings />} />
