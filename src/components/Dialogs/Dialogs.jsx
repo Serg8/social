@@ -4,9 +4,6 @@ import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 
 class Dialogs extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 

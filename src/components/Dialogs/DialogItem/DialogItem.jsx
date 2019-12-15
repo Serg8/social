@@ -3,9 +3,9 @@ import s from './DialogItem.module.scss';
 import {NavLink} from "react-router-dom";
 
 class DialogItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return (
