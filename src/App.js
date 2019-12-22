@@ -12,6 +12,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 class App extends React.Component {
@@ -22,7 +23,7 @@ class App extends React.Component {
                     <Header />
                     <Sidebar />
                     <div className='content' >
-                        <Route path='/profile' render={ () => <Profile/>} />
+                        <Route path='/profile' render={ () => <ProfileContainer />} />
                         <Route path='/dialogs' render={ () => <DialogsContainer />} />
                         <Route path='/users' render={ () => <UsersContainer />} />
                         <Route path='/news' render={ () => <News />} />
