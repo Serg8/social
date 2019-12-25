@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import './index.css';
 import Navbar from './components/Sidebar/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -20,7 +18,7 @@ class App extends React.Component {
     render() {
         return (
                 <div className="App">
-                    <Header />
+                    <HeaderContainer />
                     <Sidebar />
                     <div className='content' >
                         <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
