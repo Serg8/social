@@ -11,6 +11,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import LoginPage from "./components/Login/Login";
 
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
                         <Route path='/news' render={ () => <News />} />
                         <Route path='/music' render={ () => <Music />} />
                         <Route path='/settings' render={ () => <Settings />} />
+                        <Route path='/login' render={ () => <LoginPage />} />
 
 
                         {/*<Route path='/settings' component={Settings} />*/}
