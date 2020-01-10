@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import Friends from "./Friends/Friends";
 import {connect} from "react-redux";
 

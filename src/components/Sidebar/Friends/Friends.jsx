@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './Friends.module.scss';
 
 class Friends extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 

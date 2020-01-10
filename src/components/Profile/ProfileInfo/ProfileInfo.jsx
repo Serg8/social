@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './ProfileInfo.module.scss';
 import Preloader from "../../Common/Preloader/Preloader";
 
@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
         return (
             <div>
                 <div className={s.avatar}>
-                    <img src={props.profile.photos.large} />
+                    <img src={props.profile.photos.large} alt="" />
                 </div>
                 <h2>{props.profile.fullName}</h2>
                 <p>Обо мне: {props.profile.aboutMe}</p>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styles from "./Users.module.scss";
 import userPhoto from '../../assets/img/default.png';
 import {NavLink} from "react-router-dom";
@@ -14,7 +14,7 @@ let Users = (props) => {
     return <div>
         <div className={styles.pagination}>
             {pages.map(p => {
-                return <span className={props.currentPage === p && styles.selectPage}
+                return <span className={props.currentPage === p ? styles.selectPage : ""}
                              onClick={(e) => {
                                  props.onPageChanged(p);
                              }}
@@ -28,7 +28,7 @@ let Users = (props) => {
                         <div>
                             <div>
                                 <NavLink to={'/profile/' + u.id}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto}
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""
                                      className={styles.photo}/>
                                 </NavLink>
                             </div>

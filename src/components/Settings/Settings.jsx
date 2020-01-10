@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './Settings.module.scss';
 
 class Settings extends React.Component {
