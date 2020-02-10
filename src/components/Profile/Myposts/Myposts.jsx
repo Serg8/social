@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Myposts.module.scss';
 import Post from './Post/Post';
+import {Field, reduxForm} from "redux-form";
 
 class Myposts extends React.Component {
 
@@ -8,32 +9,37 @@ class Myposts extends React.Component {
 
         let postsElements = this.props.postsData.map(post => <Post message={post.msg} key={post.id} like={post.likesCount} />);
 
-        let newPostElement = React.createRef();
+       // let newPostElement = React.createRef();
 
-        let onAddPost = () => {
-            this.props.addPost();
-        };
-
-        let onPostChange = () => {
-            let text = newPostElement.current.value;
-            this.props.updateNewPostText(text);
-        };
+        let onAddPost = (values) => {
+            this.props.addPost(values.newPostBody);
+        }
 
         return (
             <div>
                 <h3>Posts</h3>
-                <div>
-                    <textarea onChange={onPostChange} ref={newPostElement}
-                              value={this.props.newPostText} />
-                </div>
-                <button onClick={onAddPost}>Add post</button>
+                <AddPostBodyRedux onSubmit={onAddPost} />
+
                 <div className={s.posts}>
                     {postsElements}
+
+
                 </div>
             </div>
         );
     }
 
 }
+
+const AddPostBody = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component="textarea" name="newPostBody"  />
+            <button>Add post</button>
+        </form>
+    );
+}
+
+const AddPostBodyRedux = reduxForm({form: "profileAddPostBody"})(AddPostBody);
 
 export default Myposts;
